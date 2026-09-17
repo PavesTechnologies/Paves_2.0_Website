@@ -131,7 +131,7 @@ export default function WhyPavesSection() {
 
   return (
     <section
-      className="w-full pt-8 pb-8 sm:pt-10 sm:pb-10 md:pt-12 md:pb-12 relative overflow-hidden"
+      className="w-full pt-8 pb-6 sm:pt-10 sm:pb-8 md:pt-12 md:pb-10 relative overflow-hidden"
       style={{ background: "#F4F7FF" }}
     >
       {/* Grid texture */}
@@ -152,19 +152,8 @@ export default function WhyPavesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-16 sm:mb-20"
+          className="text-center mb-8 sm:mb-10"
         >
-          <span
-            className="inline-flex items-center gap-2 border px-4 py-1.5 font-mono text-[10px] tracking-[0.2em] uppercase font-medium mb-5"
-            style={{
-              borderColor: "rgba(42,57,144,0.28)",
-              color: "#212d74",
-              background: "rgba(42,57,144,0.05)",
-            }}
-          >
-            Why Choose Us
-          </span>
-
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
             <span style={{ color: "#212d74" }}>Why </span>
             <span
@@ -246,7 +235,7 @@ export default function WhyPavesSection() {
 
               {/* Accent underline */}
               <motion.div
-                className="mt-4 h-px w-10 rounded-full"
+                className="mt-3 h-px w-10 rounded-full"
                 style={{
                   background: "linear-gradient(90deg, #d23369, #3d5fdb)",
                   transformOrigin: "left",

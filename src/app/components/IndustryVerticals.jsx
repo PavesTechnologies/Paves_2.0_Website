@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const ITEMS = [
   {
@@ -10,36 +11,42 @@ const ITEMS = [
     description:
       "Payment services comprise a variety of solutions that facilitate secure and efficient financial transactions. The aim is to provide fast, reliable, and scalable options for both individuals and businesses.",
     image: "/assets/home/industry-verticals/payments.png",
+    href: "/what-we-do/industry-verticals/payments",
   },
   {
     title: "Banking",
     description:
       "Banking encompasses a broad spectrum of financial services including personal and business accounts, loans, deposit services, fund transfers, and e-banking.",
     image: "/assets/home/industry-verticals/banking.png",
+    href: "/what-we-do/industry-verticals/banking",
   },
   {
     title: "Payments Fraud & AML",
     description:
       "Payments Fraud & Anti-Money Laundering (AML) services implement rigorous mechanisms to detect and prevent financial crime.",
     image: "/assets/home/industry-verticals/pay-fraud.png",
+    href: "/what-we-do/industry-verticals/payments-fraud-and-aml",
   },
   {
     title: "Governance Risk & Compliance",
     description:
       "Governance Risk & Compliance (GRC) refers to frameworks and solutions that help organizations meet regulatory requirements, manage risks, and ensure ethical practices.",
     image: "/assets/home/industry-verticals/risk-compliance.png",
+    href: "/what-we-do/industry-verticals/governance-risk-compliance",
   },
   {
     title: "Insurance",
     description:
       "Insurance services provide financial protection against various risks such as accidents, health issues, property loss, and business liability.",
     image: "/assets/home/industry-verticals/insurance.png",
+    href: "/what-we-do/industry-verticals/insurance",
   },
   {
     title: "Capital Markets",
     description:
       "Capital Markets consist of platforms and products that enable investment, trading, and the allocation of equity and debt.",
     image: "/assets/home/industry-verticals/capital-markets.png",
+    href: "/what-we-do/industry-verticals/capital-markets",
   },
 ];
 
@@ -87,7 +94,7 @@ export default function IndustryVerticals() {
 
   return (
     <section
-      className="w-full py-20 sm:py-24 lg:py-28 relative overflow-hidden"
+      className="w-full py-14 sm:py-16 lg:py-20 relative overflow-hidden"
       style={{ background: "#F4F7FF" }}
     >
       {/* Grid texture */}
@@ -116,19 +123,8 @@ export default function IndustryVerticals() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-14 sm:mb-16"
+          className="text-center mb-9 sm:mb-11"
         >
-          <span
-            className="inline-flex items-center gap-2 border px-4 py-1.5 font-mono text-[10px] tracking-[0.2em] uppercase font-medium mb-5"
-            style={{
-              borderColor: "rgba(42,57,144,0.28)",
-              color: "#212d74",
-              background: "rgba(42,57,144,0.05)",
-            }}
-          >
-            Markets We Serve
-          </span>
-
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
             <span style={{ color: "#212d74" }}>Industry </span>
             <span
@@ -167,8 +163,9 @@ export default function IndustryVerticals() {
           onTouchEnd={handleTouchEnd}
         >
 
-          {/* Image column */}
-          <div className="w-full lg:w-[55%] relative">
+          {/* Image column — smaller than the original 55%/4:3 so it no
+              longer dominates the card; 3:2 keeps a natural photo crop. */}
+          <div className="w-full lg:w-[42%] relative">
             <AnimatePresence mode="wait">
               <motion.div
                 key={`img-${currentIndex}`}
@@ -177,14 +174,14 @@ export default function IndustryVerticals() {
                 exit={{ opacity: 0, x: 40, scale: 0.97 }}
                 transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
                 className="relative w-full rounded-2xl overflow-hidden shadow-2xl"
-                style={{ aspectRatio: "4/3" }}
+                style={{ aspectRatio: "3/2" }}
               >
                 <Image
                   src={ITEMS[currentIndex].image}
                   alt={ITEMS[currentIndex].title}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 55vw"
+                  sizes="(max-width: 1024px) 100vw, 42vw"
                 />
                 {/* Rose accent corner */}
                 <div
@@ -215,7 +212,7 @@ export default function IndustryVerticals() {
           </div>
 
           {/* Text column */}
-          <div className="w-full lg:w-[45%]">
+          <div className="w-full lg:w-[58%]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={`text-${currentIndex}`}
@@ -251,12 +248,15 @@ export default function IndustryVerticals() {
                   {ITEMS[currentIndex].description}
                 </p>
 
-                <button
+                {/* Was a bare <button> with no href — now a real Link to
+                    each vertical's own detail page. */}
+                <Link
+                  href={ITEMS[currentIndex].href}
                   className="inline-flex items-center gap-2 font-semibold text-sm transition-all duration-200 hover:gap-3"
                   style={{ color: "#d23369" }}
                 >
                   Read more <span className="text-base">→</span>
-                </button>
+                </Link>
               </motion.div>
             </AnimatePresence>
 

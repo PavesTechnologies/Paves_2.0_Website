@@ -85,19 +85,19 @@ export default function WhoWeArePage() {
           <InfoCard
             title="About Us"
             text="Learn our story, mission, and how we aim to reshape the digital future through engineering excellence and innovation."
-            href="/who-we-are/about/"
+            href="/who-we-are/about"
           />
 
           <InfoCard
             title="Management & Advisory Board"
             text="A team of experienced leaders offering strategic direction to drive Paves' long-term growth and global vision."
-            href="/who-we-are/management-advisory-board/"
+            href="/who-we-are/management-advisory-board"
           />
 
           <InfoCard
             title="Technology Council"
             text="A visionary group of experts guiding research, assessing emerging trends, and shaping Paves’ innovation roadmap."
-            href="/who-we-are/technology-council/"
+            href="/who-we-are/technology-council"
           />
         </div>
       </section>

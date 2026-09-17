@@ -107,7 +107,7 @@ export default function ArtificialIntelligence() {
           <div className="flex justify-center gap-12 mt-25 flex-wrap  mb-10">
             <div className="relative w-64 h-50 md:w-80 md:h-52">
               <Image
-                src="/assets/futuristic-scene-with-high-tech-robot-used-construction-industry.jpg"
+                src="/assets/what-we-do/services/futuristic-scene-with-high-tech-robot-used-construction-industry.png"
                 alt="AI Concept 1"
                 fill
           sizes="(max-width: 768px) 256px, 320px"

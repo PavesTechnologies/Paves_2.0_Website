@@ -157,7 +157,7 @@ export default function HeroSection() {
             animate="visible"
             className="flex flex-col"
           >
-            {/* Badge */}
+            {/* Badge
             <motion.div variants={itemVariants} className="mb-7">
               <span
                 className="inline-flex items-center gap-2.5 border px-4 py-1.5 font-mono text-[10px] tracking-[0.2em] uppercase font-medium"
@@ -167,8 +167,8 @@ export default function HeroSection() {
                   background: "rgba(210,51,105,0.07)",
                   letterSpacing: "0.2em",
                 }}
-              >
-                <motion.span
+              > */}
+                {/* <motion.span
                   className="inline-block w-1.5 h-1.5 rounded-full flex-shrink-0"
                   style={{ background: "#d23369" }}
                   animate={{ opacity: [1, 0.22, 1] }}
@@ -176,7 +176,7 @@ export default function HeroSection() {
                 />
                 AI &amp; Cloud · Financial Technology
               </span>
-            </motion.div>
+            </motion.div> */}
 
             {/* Headline */}
             <motion.div variants={itemVariants}>
@@ -257,17 +257,10 @@ export default function HeroSection() {
               with cutting-edge AI and cloud technologies
             </motion.p>
 
-            {/* CTA */}
-            <motion.div variants={itemVariants} className="mt-9 relative inline-block">
-              {/* Pulsing attention ring */}
-              <motion.div
-                className="absolute -inset-1 rounded-full pointer-events-none"
-                style={{
-                  background: "linear-gradient(135deg, #d23369, #9b4fc7)",
-                }}
-                animate={{ opacity: [0, 0.35, 0], scale: [1, 1.14, 1] }}
-                transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-              />
+            {/* CTA — `self-start` keeps the wrapper hugging the button. As a
+                flex-column child it would otherwise stretch to the full column
+                width, which is what made the old pulsing ring read as a box. */}
+            <motion.div variants={itemVariants} className="mt-9 self-start">
               <Link href="/what-we-do/services">
                 <motion.button
                   whileHover={{
@@ -279,6 +272,7 @@ export default function HeroSection() {
                   style={{
                     background:
                       "linear-gradient(135deg, #d23369 0%, #9b4fc7 100%)",
+                    boxShadow: "0 0 24px rgba(210,51,105,0.32)",
                   }}
                 >
                   <span className="relative z-10">Explore Services</span>
