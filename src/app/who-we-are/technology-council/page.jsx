@@ -60,25 +60,25 @@ function TechCouncilExpertise() {
       title: "AI-First Strategy",
       description:
         "Adopt AI and data-driven decision-making to boost efficiency and unlock new business opportunities.",
-      icon: "🤖",
+      
     },
     {
       title: "Cloud & DevOps",
       description:
         "Migrate to cloud, improve deployment speed, and enhance scalability using modern DevOps practices.",
-      icon: "☁️",
+      
     },
     {
       title: "Open Banking & APIs",
       description:
         "Build secure APIs and open banking solutions that power fintech innovation and integrations.",
-      icon: "💳",
+      
     },
     {
       title: "Cybersecurity",
       description:
         "Strengthen your digital ecosystem with strong security frameworks and fraud prevention systems.",
-      icon: "🛡️",
+      
     },
   ];
 
@@ -125,12 +125,12 @@ function TechCouncilExpertise() {
 
         {/* Button */}
         <div className="flex justify-center mt-12">
-          <button className="bg-primary hover:bg-indigo-900 text-white font-semibold px-8 py-4 rounded-full shadow-lg transition duration-300 transform hover:-translate-y-1 hover:scale-105 flex items-center gap-3">
+          {/* {/* <button className="bg-primary hover:bg-indigo-900 text-white font-semibold px-8 py-4 rounded-full shadow-lg transition duration-300 transform hover:-translate-y-1 hover:scale-105 flex items-center gap-3">
             Our Expertise
             <span className="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full">
               ➔
-            </span>
-          </button>
+            </span> */}
+          {/* </button> */} 
         </div>
       </div>
     </motion.section>

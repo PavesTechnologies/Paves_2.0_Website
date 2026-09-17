@@ -58,7 +58,7 @@ export default function EnterprisePage() {
           className="flex justify-center"
         >
           <Image
-            src="/images/enterprise-automation.jpg"
+            src="/assets/what-we-do/services/enterprise-automation.png"
             alt="Enterprise Automation"
             width={500}
             height={400}
@@ -77,7 +77,7 @@ export default function EnterprisePage() {
           className="flex justify-center order-2 md:order-1"
         >
           <Image
-            src="/images/rpa-automation.jpg"
+            src="/assets/what-we-do/services/rpa-automation.png"
             alt="Robotic Process Automation"
             width={500}
             height={400}
@@ -135,7 +135,7 @@ export default function EnterprisePage() {
         </div>
 
         <Image
-          src="/images/lowcode-platform.jpg"
+           src="/assets/what-we-do/services/lowcode-platform.png"
           alt="Low Code Platform"
           width={500}
           height={400}
@@ -146,7 +146,7 @@ export default function EnterprisePage() {
       {/* ---------- SECTION 4 ---------- */}
       <section className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <Image
-          src="/images/business-optimization.jpg"
+          src="/assets/what-we-do/services/business-optimization.png"
           alt="Business Process Optimization"
           width={500}
           height={400}
