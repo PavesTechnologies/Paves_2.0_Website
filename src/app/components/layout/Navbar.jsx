@@ -3,11 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 
 export function Navigation() {
   const pathname = usePathname();
+  const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -164,7 +165,9 @@ export function Navigation() {
                     style={{ color: active ? "#2a3990" : "#374151" }}
                     onClick={() => {
                       if (link.external) window.open(link.href, "_blank", "noopener,noreferrer");
-                      else if (link.href) window.location.href = link.href;
+                      // router.push keeps this a client-side transition; the old
+                      // window.location.href forced a full document reload.
+                      else if (link.href) router.push(link.href);
                     }}
                     aria-haspopup={link.submenu ? "true" : undefined}
                     aria-expanded={link.submenu ? activeDropdown === link.title : undefined}

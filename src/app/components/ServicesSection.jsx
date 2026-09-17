@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform, useSpring, useMotionValueEvent } from "framer-motion";
 import Image from "next/image";
 import { useRef, useState } from "react";
 import Link from "next/link";
@@ -10,61 +10,61 @@ const SERVICES = [
     title: "Business & Technology Advisory Consulting",
     desc: "We help organizations align business goals with advanced technology strategies to drive operational excellence.",
     image: "/assets/home/services/business-and-technology-advisory.png",
-    link: "what-we-do/services/business-and-technology",
+    href: "/what-we-do/services/business-and-technology",
   },
   {
     title: "Artificial Intelligence",
     desc: "We build AI systems that automate workflows, enhance predictions, and accelerate decision-making.",
     image: "/assets/home/services/artificial-intelligence.png",
-    link: "what-we-do/services/artificial-intelligence",
+    href: "/what-we-do/services/artificial-intelligence",
   },
   {
     title: "Cloud Engineering And DevOps",
     desc: "We architect scalable cloud systems with automated CI/CD pipelines for faster deployments.",
     image: "/assets/home/services/cloud-engineering-and-devops.png",
-    link: "what-we-do/services/cloud-and-devops",
+    href: "/what-we-do/services/cloud-and-devops",
   },
   {
     title: "Data And Analytics",
     desc: "We deliver analytics platforms, dashboards, and predictive modeling to power data-driven decisions.",
     image: "/assets/home/services/data-analytics.png",
-    link: "what-we-do/services/data-and-analytics",
+    href: "/what-we-do/services/data-and-analytics",
   },
   {
     title: "Product Management & Engineering",
     desc: "We build scalable digital products focused on usability, engineering excellence, and innovation.",
     image: "/assets/home/services/product-management-and-engineering.png",
-    link: "what-we-do/services/product-management",
+    href: "/what-we-do/services/product-management",
   },
   {
     title: "Enterprise Automation",
     desc: "We automate repetitive workflows using AI, bots, and workflow orchestration tools.",
     image: "/assets/home/services/enterprise-automation.png",
-    link: "what-we-do/services/enterprise-automation",
+    href: "/what-we-do/services/enterprise-automation",
   },
   {
     title: "Legacy Support & Modernization",
     desc: "We modernize legacy apps, refactor systems, and migrate workloads to modern platforms.",
     image: "/assets/home/services/legacy-support-and-modernisation.png",
-    link: "what-we-do/services/legacy-support",
+    href: "/what-we-do/services/legacy-support",
   },
   {
     title: "Cyber Security",
     desc: "We implement secure architectures, access control, and threat detection systems.",
     image: "/assets/home/services/cyber-security.png",
-    link: "what-we-do/services/cyber-security",
+    href: "/what-we-do/services/cyber-security",
   },
   {
     title: "Identity And Access Management",
     desc: "We deploy SSO, MFA, and RBAC to secure identity access across applications.",
     image: "/assets/home/services/identity-and-access-management.png",
-    link: "what-we-do/services/identity-and-access-management",
+    href: "/what-we-do/services/identity-and-access-management",
   },
   {
     title: "Next Gen Technologies",
     desc: "We build solutions using IoT, Blockchain, AR/VR, and intelligent edge systems.",
     image: "/assets/home/services/next-gen-technologies.png",
-    link: "what-we-do/services/next-gen-technologies",
+    href: "/what-we-do/services/next-gen-technologies",
   },
 ];
 
@@ -76,18 +76,30 @@ export default function ServicesSection() {
     offset: ["start start", "end end"],
   });
 
-  const cardsY = useTransform(scrollYProgress, [0, 1], ["0%", "-73%"]);
+  /* The card stack is driven by scroll progress, so its speed is set by how
+     tall the section is: the pinned viewport eats 100vh, leaving
+     (section height - 100vh) of travel spread across all 10 services.
+     At the original 300vh that was only ~20vh of scrolling per service, which
+     is what made the stack fly past. 600vh gives ~50vh each. */
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 55,
+    damping: 24,
+    mass: 0.35,
+    restDelta: 0.0005,
+  });
+
+  const cardsY = useTransform(smoothProgress, [0, 1], ["0%", "-73%"]);
 
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    const idx = Math.min(SERVICES.length - 1, Math.floor(latest * SERVICES.length));
-    setCurrentServiceIndex(idx);
+  useMotionValueEvent(smoothProgress, "change", (latest) => {
+    const clamped = Math.min(Math.max(latest, 0), 0.999);
+    setCurrentServiceIndex(Math.floor(clamped * SERVICES.length));
   });
 
   return (
     <section
       ref={sectionRef}
-      className="relative h-[300vh] w-full bg-fixed bg-cover bg-center"
+      className="relative h-[600vh] w-full bg-fixed bg-cover bg-center"
       style={{ backgroundImage: "url('/assets/home/services/services-bg.png')" }}
     >
       <div
@@ -110,16 +122,6 @@ export default function ServicesSection() {
 
           {/* Mobile heading */}
           <div className="lg:hidden text-white text-center flex-shrink-0 pt-6">
-            <span
-              className="inline-flex items-center gap-2 border px-4 py-1.5 font-mono text-[10px] tracking-[0.2em] uppercase font-medium mb-3"
-              style={{
-                borderColor: "rgba(210,51,105,0.35)",
-                color: "#f9a8c9",
-                background: "rgba(210,51,105,0.07)",
-              }}
-            >
-              Our Core Services
-            </span>
             <h2 className="text-xl sm:text-2xl font-bold" style={{ color: "#F0F2FA" }}>
               Empowering Businesses Through Technology
             </h2>
@@ -127,17 +129,6 @@ export default function ServicesSection() {
 
           {/* ── LEFT: Desktop sidebar ── */}
           <div className="hidden lg:flex flex-col justify-center max-w-full lg:max-w-lg xl:max-w-xl text-white">
-            <span
-              className="inline-flex items-center gap-2 border px-4 py-1.5 font-mono text-[10px] tracking-[0.2em] uppercase font-medium mb-6 self-start"
-              style={{
-                borderColor: "rgba(210,51,105,0.35)",
-                color: "#f9a8c9",
-                background: "rgba(210,51,105,0.07)",
-              }}
-            >
-              Our Core Services
-            </span>
-
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-5">
               <span style={{ color: "#F0F2FA" }}>
                 Empowering Businesses Through{" "}
@@ -216,7 +207,7 @@ export default function ServicesSection() {
             className="space-y-4 sm:space-y-5 pt-4 sm:pt-8 lg:pt-20 w-full lg:w-[460px] xl:w-[500px] flex-shrink-0 lg:self-start"
           >
             {SERVICES.map((service, index) => (
-              <Link key={service.title} href={`/${service.link}`} className="block">
+              <Link key={service.title} href={service.href} className="block">
                 <motion.div
                   className="group overflow-hidden rounded-xl border transition-colors duration-300"
                   style={{

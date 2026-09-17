@@ -257,17 +257,10 @@ export default function HeroSection() {
               with cutting-edge AI and cloud technologies
             </motion.p>
 
-            {/* CTA */}
-            <motion.div variants={itemVariants} className="mt-9 relative inline-block">
-              {/* Pulsing attention ring */}
-              <motion.div
-                className="absolute -inset-1 rounded-full pointer-events-none"
-                style={{
-                  background: "linear-gradient(135deg, #d23369, #9b4fc7)",
-                }}
-                animate={{ opacity: [0, 0.35, 0], scale: [1, 1.14, 1] }}
-                transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-              />
+            {/* CTA — `self-start` keeps the wrapper hugging the button. As a
+                flex-column child it would otherwise stretch to the full column
+                width, which is what made the old pulsing ring read as a box. */}
+            <motion.div variants={itemVariants} className="mt-9 self-start">
               <Link href="/what-we-do/services">
                 <motion.button
                   whileHover={{
@@ -279,6 +272,7 @@ export default function HeroSection() {
                   style={{
                     background:
                       "linear-gradient(135deg, #d23369 0%, #9b4fc7 100%)",
+                    boxShadow: "0 0 24px rgba(210,51,105,0.32)",
                   }}
                 >
                   <span className="relative z-10">Explore Services</span>
