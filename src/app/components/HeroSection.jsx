@@ -157,7 +157,7 @@ export default function HeroSection() {
             animate="visible"
             className="flex flex-col"
           >
-            {/* Badge */}
+            {/* Badge
             <motion.div variants={itemVariants} className="mb-7">
               <span
                 className="inline-flex items-center gap-2.5 border px-4 py-1.5 font-mono text-[10px] tracking-[0.2em] uppercase font-medium"
@@ -167,8 +167,8 @@ export default function HeroSection() {
                   background: "rgba(210,51,105,0.07)",
                   letterSpacing: "0.2em",
                 }}
-              >
-                <motion.span
+              > */}
+                {/* <motion.span
                   className="inline-block w-1.5 h-1.5 rounded-full flex-shrink-0"
                   style={{ background: "#d23369" }}
                   animate={{ opacity: [1, 0.22, 1] }}
@@ -176,7 +176,7 @@ export default function HeroSection() {
                 />
                 AI &amp; Cloud · Financial Technology
               </span>
-            </motion.div>
+            </motion.div> */}
 
             {/* Headline */}
             <motion.div variants={itemVariants}>

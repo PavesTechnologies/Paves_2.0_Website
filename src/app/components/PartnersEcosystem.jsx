@@ -226,7 +226,7 @@ function SectionHeading() {
   return (
     <div className="text-white text-center">
       {/* Label */}
-      <span
+      {/* <span
         className="
           inline-flex
           items-center
@@ -248,7 +248,7 @@ function SectionHeading() {
         }}
       >
         Our Partnership Promise
-      </span>
+      </span> */}
 
       {/* Main heading */}
       <h2

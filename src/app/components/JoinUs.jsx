@@ -81,7 +81,7 @@ export default function JoinUs() {
         >
           {/* Left: Heading + CTA */}
           <div className="max-w-xs sm:max-w-sm md:max-w-md">
-            <span
+            {/* <span
               className="inline-flex items-center gap-2 border px-4 py-1.5 font-mono text-[10px] tracking-[0.2em] uppercase font-medium mb-5"
               style={{
                 borderColor: "rgba(210,51,105,0.35)",
@@ -90,7 +90,7 @@ export default function JoinUs() {
               }}
             >
               Join Our Team
-            </span>
+            </span> */}
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
               <span style={{ color: "#F0F2FA" }}>Build the </span>
