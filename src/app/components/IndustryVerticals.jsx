@@ -10,42 +10,42 @@ const ITEMS = [
     title: "Payments",
     description:
       "Payment services comprise a variety of solutions that facilitate secure and efficient financial transactions. The aim is to provide fast, reliable, and scalable options for both individuals and businesses.",
-    image: "/assets/home/industry-verticals/payments.png",
+    image: "/assets/home/industry-verticals/payments.jpg",
     href: "/what-we-do/industry-verticals/payments",
   },
   {
     title: "Banking",
     description:
       "Banking encompasses a broad spectrum of financial services including personal and business accounts, loans, deposit services, fund transfers, and e-banking.",
-    image: "/assets/home/industry-verticals/banking.png",
+    image: "/assets/home/industry-verticals/banking.jpg",
     href: "/what-we-do/industry-verticals/banking",
   },
   {
     title: "Payments Fraud & AML",
     description:
       "Payments Fraud & Anti-Money Laundering (AML) services implement rigorous mechanisms to detect and prevent financial crime.",
-    image: "/assets/home/industry-verticals/pay-fraud.png",
+    image: "/assets/home/industry-verticals/pay-fraud.jpg",
     href: "/what-we-do/industry-verticals/payments-fraud-and-aml",
   },
   {
     title: "Governance Risk & Compliance",
     description:
       "Governance Risk & Compliance (GRC) refers to frameworks and solutions that help organizations meet regulatory requirements, manage risks, and ensure ethical practices.",
-    image: "/assets/home/industry-verticals/risk-compliance.png",
+    image: "/assets/home/industry-verticals/risk-compliance.jpg",
     href: "/what-we-do/industry-verticals/governance-risk-compliance",
   },
   {
     title: "Insurance",
     description:
       "Insurance services provide financial protection against various risks such as accidents, health issues, property loss, and business liability.",
-    image: "/assets/home/industry-verticals/insurance.png",
+    image: "/assets/home/industry-verticals/insurance.jpg",
     href: "/what-we-do/industry-verticals/insurance",
   },
   {
     title: "Capital Markets",
     description:
       "Capital Markets consist of platforms and products that enable investment, trading, and the allocation of equity and debt.",
-    image: "/assets/home/industry-verticals/capital-markets.png",
+    image: "/assets/home/industry-verticals/capital-markets.jpg",
     href: "/what-we-do/industry-verticals/capital-markets",
   },
 ];

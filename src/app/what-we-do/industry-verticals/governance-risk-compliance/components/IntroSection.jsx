@@ -48,7 +48,7 @@ export default function IntroSection() {
         {/* Right illustration */}
         <div className="flex items-center justify-center">
           <Image
-            src="/assets/home/industry-verticals/risk-compliance.png"   // <-- Put image here
+            src="/assets/home/industry-verticals/risk-compliance.jpg"   // <-- Put image here
             alt="GRC Illustration"
             width={420}
             height={340}

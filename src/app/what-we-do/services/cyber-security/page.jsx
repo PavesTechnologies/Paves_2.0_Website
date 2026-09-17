@@ -97,7 +97,7 @@ export default function CybersecurityRedesign() {
         </div>
 
         <Image
-          src="/assets/home/industry-verticals/risk-compliance.png"
+          src="/assets/home/industry-verticals/risk-compliance.jpg"
           width={650}
           height={450}
           alt="Risk & Compliance Illustration"

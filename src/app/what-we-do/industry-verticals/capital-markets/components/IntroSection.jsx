@@ -35,7 +35,7 @@ export default function IntroSection() {
         {/* RIGHT - illustration (replace image in public/images/) */}
         <div className="flex items-center justify-center">
           <Image
-            src="/assets/home/industry-verticals/capital-markets.png"
+            src="/assets/home/industry-verticals/capital-markets.jpg"
             alt="Capital markets illustration"
             width={420}
             height={320}
