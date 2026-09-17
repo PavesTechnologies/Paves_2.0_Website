@@ -214,7 +214,7 @@ export default function WhyPavesSection() {
 
               {/* Heading above card */}
               <h3
-                className="font-mono text-[11px] tracking-[0.12em] uppercase text-center px-2 mb-3 relative z-10 font-semibold"
+                className="font-sans text-[11px] tracking-[0.12em] uppercase text-center px-2 mb-3 relative z-10 font-semibold"
                 style={{ color: "#212d74" }}
               >
                 {item.heading}
@@ -227,7 +227,7 @@ export default function WhyPavesSection() {
               />
 
               <p
-                className="mt-2 text-center font-mono text-[10px] tracking-[0.12em] uppercase select-none pointer-events-none"
+                className="mt-2 text-center font-sans text-[10px] tracking-[0.12em] uppercase select-none pointer-events-none"
                 style={{ color: "rgba(33,45,116,0.35)" }}
               >
                 Tap to explore

@@ -160,7 +160,7 @@ export default function HeroSection() {
             {/* Badge
             <motion.div variants={itemVariants} className="mb-7">
               <span
-                className="inline-flex items-center gap-2.5 border px-4 py-1.5 font-mono text-[10px] tracking-[0.2em] uppercase font-medium"
+                className="inline-flex items-center gap-2.5 border px-4 py-1.5 font-sans text-[10px] tracking-[0.2em] uppercase font-medium"
                 style={{
                   borderColor: "rgba(210,51,105,0.38)",
                   color: "#f9a8c9",
@@ -222,7 +222,7 @@ export default function HeroSection() {
               className="mt-7 flex items-center gap-3"
             >
               <span
-                className="font-mono text-[10px] tracking-[0.16em] uppercase flex-shrink-0"
+                className="font-sans text-[10px] tracking-[0.16em] uppercase flex-shrink-0"
                 style={{ color: "rgba(240,242,250,0.38)" }}
               >
                 We deliver:
@@ -235,7 +235,7 @@ export default function HeroSection() {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -24, opacity: 0 }}
                     transition={{ duration: 0.36, ease: [0.22, 1, 0.36, 1] }}
-                    className="absolute inset-0 font-mono text-[11px] tracking-[0.1em] font-semibold uppercase"
+                    className="absolute inset-0 font-sans text-[11px] tracking-[0.1em] font-semibold uppercase"
                     style={{ color: "#f472b6" }}
                   >
                     {TICKER_ITEMS[tickerIndex]}
@@ -388,7 +388,7 @@ export default function HeroSection() {
           className="flex flex-col items-center gap-1.5 cursor-default select-none"
           style={{ color: "rgba(240,242,250,0.52)" }}
         >
-          <span className="font-mono text-[10px] tracking-[0.18em] uppercase">
+          <span className="font-sans text-[10px] tracking-[0.18em] uppercase">
             Scroll to explore
           </span>
           <ChevronDown size={13} />

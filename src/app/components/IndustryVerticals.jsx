@@ -223,7 +223,7 @@ export default function IndustryVerticals() {
               >
                 {/* Slide counter */}
                 <div
-                  className="font-mono text-[11px] tracking-[0.18em] uppercase mb-3"
+                  className="font-sans text-[11px] tracking-[0.18em] uppercase mb-3"
                   style={{ color: "rgba(33,45,116,0.4)" }}
                 >
                   {String(currentIndex + 1).padStart(2, "0")} / {String(ITEMS.length).padStart(2, "0")}

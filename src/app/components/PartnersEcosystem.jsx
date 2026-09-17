@@ -234,7 +234,7 @@ function SectionHeading() {
           border
           px-4
           py-1.5
-          font-mono
+          font-sans
           text-[10px]
           tracking-[0.2em]
           uppercase
@@ -588,7 +588,7 @@ export default function PartnersEcosystem() {
           >
             <p
               className="
-                font-mono
+                font-sans
                 text-[11px]
                 tracking-[0.18em]
                 uppercase

@@ -169,7 +169,7 @@ export default function ServicesSection() {
             {/* Live service counter */}
             <div className="mt-8 pt-6 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
               <div
-                className="font-mono text-[10px] tracking-[0.16em] uppercase mb-3"
+                className="font-sans text-[10px] tracking-[0.16em] uppercase mb-3"
                 style={{ color: "rgba(240,242,250,0.3)" }}
               >
                 Currently showing
@@ -184,7 +184,7 @@ export default function ServicesSection() {
                 >
                   <div className="flex items-center gap-2 flex-wrap">
                     <span
-                      className="font-mono text-sm font-bold"
+                      className="font-sans text-sm font-bold"
                       style={{ color: "#d23369" }}
                     >
                       {String(currentServiceIndex + 1).padStart(2, "0")} / {String(SERVICES.length).padStart(2, "0")}
@@ -232,22 +232,16 @@ export default function ServicesSection() {
                       alt={service.title}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 500px"
                     />
-                    {/* Service number badge */}
-                    <div
-                      className="absolute top-3 left-3 font-mono text-[11px] tracking-[0.12em] px-2 py-0.5 rounded"
-                      style={{
-                        background: "rgba(11,15,39,0.75)",
-                        color: "#d23369",
-                        backdropFilter: "blur(8px)",
-                        border: "1px solid rgba(210,51,105,0.25)",
-                      }}
-                    >
-                      {String(index + 1).padStart(2, "0")}
-                    </div>
                   </div>
 
                   {/* Text */}
                   <div className="px-5 pb-5 pt-4">
+                    <span
+                      className="block text-xs font-medium mb-1"
+                      style={{ color: "#d23369" }}
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
                     <h3
                       className="font-semibold text-base sm:text-lg leading-tight mb-1.5"
                       style={{ color: "#F0F2FA" }}
@@ -261,7 +255,7 @@ export default function ServicesSection() {
                       {service.desc}
                     </p>
                     <span
-                      className="inline-flex items-center gap-1 font-mono text-[11px] tracking-wide group-hover:gap-2 transition-all duration-200"
+                      className="inline-flex items-center gap-1 font-sans text-[11px] tracking-wide group-hover:gap-2 transition-all duration-200"
                       style={{ color: "#d23369" }}
                     >
                       Learn more <span>→</span>

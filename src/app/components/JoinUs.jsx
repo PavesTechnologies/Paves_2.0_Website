@@ -82,7 +82,7 @@ export default function JoinUs() {
           {/* Left: Heading + CTA */}
           <div className="max-w-xs sm:max-w-sm md:max-w-md">
             {/* <span
-              className="inline-flex items-center gap-2 border px-4 py-1.5 font-mono text-[10px] tracking-[0.2em] uppercase font-medium mb-5"
+              className="inline-flex items-center gap-2 border px-4 py-1.5 font-sans text-[10px] tracking-[0.2em] uppercase font-medium mb-5"
               style={{
                 borderColor: "rgba(210,51,105,0.35)",
                 color: "#f9a8c9",
@@ -153,7 +153,7 @@ export default function JoinUs() {
           {/* Right: Process steps */}
           <div className="hidden md:block pt-1">
             <p
-              className="font-mono text-[11px] tracking-[0.16em] uppercase mb-6"
+              className="font-sans text-[11px] tracking-[0.16em] uppercase mb-6"
               style={{ color: "rgba(240,242,250,0.38)" }}
             >
               How It Works
@@ -175,16 +175,12 @@ export default function JoinUs() {
                 >
                   {/* Step indicator + connector */}
                   <div className="flex flex-col items-center">
-                    <div
-                      className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0"
-                      style={{
-                        background:
-                          "linear-gradient(135deg, #d23369, #9b4fc7)",
-                        color: "#fff",
-                      }}
+                    <span
+                      className="font-semibold text-lg shrink-0"
+                      style={{ color: "#d23369" }}
                     >
                       {s.step}
-                    </div>
+                    </span>
                     {i < STEPS.length - 1 && (
                       <div
                         className="w-px mt-1"
