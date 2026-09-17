@@ -38,7 +38,7 @@ export default function DataAndAnalyticsPage() {
                 "Natural Language Processing (NLP)",
                 "Advanced Data Mining",
               ],
-              image: "/images/data-science.jpg",
+              image: "/assets/what-we-do/services/data-science.png",
             },
             {
               title: "Data Engineering:",
@@ -49,7 +49,7 @@ export default function DataAndAnalyticsPage() {
                 "Real-Time Data Streaming",
                 "Data Quality and Governance",
               ],
-              image: "/images/data-engineering.jpg",
+              image: "/assets/what-we-do/services/data-engineering.png",
             },
             {
               title: "Data Visualization & Analytics:",
@@ -60,7 +60,7 @@ export default function DataAndAnalyticsPage() {
                 "Data Storytelling",
                 "Predictive & Prescriptive Analytics",
               ],
-              image: "/images/data-visualization.jpg",
+              image: "/assets/what-we-do/services/data-visualization.png",
             },
           ].map((card, index) => (
             <div
