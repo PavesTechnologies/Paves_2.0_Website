@@ -5,6 +5,10 @@ const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Emits .next/standalone: a self-contained server.js plus only the traced
+  // node_modules. The Docker runtime stage copies that instead of the full
+  // dependency tree.
+  output: "standalone",
   compress: true,
   productionBrowserSourceMaps: true,
   // Pin the workspace root. A stray package-lock.json in the user profile
